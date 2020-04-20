@@ -25,7 +25,7 @@
   "require": {
     "php": ">=7.3",
     "robmorgan/phinx": "^0.12.1",
-    "fzaninotto/faker": "^1.8",
+    "fzaninotto/faker": "^1.9",
     "symfony/yaml": "*"
   },
   "minimum-stability": "dev",
