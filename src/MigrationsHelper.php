@@ -44,14 +44,11 @@ trait MigrationsHelper
                 $tableColumns[] = Column::dateTime('create_time')
                     ->setDefault('CURRENT_TIMESTAMP')
                     ->setComment('creat time');
-                $tableColumns[] = Column::dateTime('update_time')
-                    ->setNullable()
-                    ->setComment('update time');
+                $tableColumns[] = Column::dateTime('update_time')->setComment('update time');
             }
 
             if ($createSoftDelete) {
                 $tableColumns[] = Column::dateTime('delete_time')
-                    ->setNullable()
                     ->setComment('delete time');
             }
 

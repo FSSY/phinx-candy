@@ -23,6 +23,16 @@ class Column extends \Phinx\Db\Table\Column
     ];
 
     /**
+     * @var array
+     */
+    protected $nulls = [
+        self::DATE,
+        self::DATETIME,
+        self::TIME,
+        self::TIMESTAMP,
+    ];
+
+    /**
      * Sets the column type to binary
      * @param string $name name
      * @return Column
@@ -44,13 +54,17 @@ class Column extends \Phinx\Db\Table\Column
         $column = new self();
         $column->setName($name);
         $column->setType($type);
+        $column->setOptions($options);
 
         if (!isset($options['default'])
             && in_array($type, array_keys($column->defaults))
         ) {
-            $options['default'] = $column->defaults[$type];
+            $column->setDefault($column->defaults[$type]);
         }
-        $column->setOptions($options);
+
+        if (in_array($type, $column->nulls)) {
+            $column->setNullable();
+        }
 
         return $column;
     }
