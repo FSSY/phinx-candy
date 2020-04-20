@@ -1,0 +1,12 @@
+# Created by .ignore support plugin (hsz.mobi)
+.idea
+.vscode
+vendor
+.env
+.DS_Store
+.php_cs.cache
+composer.lock
+phinx.yml
+phinx.php
+phinx.json
+db
