@@ -29,16 +29,9 @@ trait MigrationsHelper
         array $tableIndexes = [],
         $createTimestamps = true,
         $createSoftDelete = true
-    )
-    {
+    ) {
         if ($this instanceof AbstractMigration) {
             $table = $this->table($tableName, ['comment' => $tableComment]);
-
-            if (!empty($tableIndexes)) {
-                foreach ($tableIndexes as $index) {
-                    $table->addIndex($index);
-                }
-            }
 
             if ($createTimestamps) {
                 $tableColumns[] = Column::dateTime('create_time')
@@ -55,6 +48,12 @@ trait MigrationsHelper
             if (!empty($tableColumns)) {
                 foreach ($tableColumns as $column) {
                     $table->addColumn($column);
+                }
+            }
+
+            if (!empty($tableIndexes)) {
+                foreach ($tableIndexes as $index) {
+                    $table->addIndex($index);
                 }
             }
 
