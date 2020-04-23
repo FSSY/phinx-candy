@@ -4,6 +4,7 @@ namespace fssy\migration;
 
 use Faker\Factory;
 use Faker\Generator;
+use fssy\migration\faker\Nickname;
 
 /**
  * Trait SeedsHelper
@@ -11,6 +12,7 @@ use Faker\Generator;
  * 1. $this->email
  * 2. $this->numberBetween(1,10)
  * @property Generator $faker
+ * @property string $nickname
  * @see Generator
  * @package fssy\migration
  * @mixin Generator
@@ -29,6 +31,9 @@ trait SeedsHelper
         self::init();
         if ($name == 'faker') {
             return self::$generator;
+        }
+        if ($name == 'nickname') {
+            return Nickname::generate(self::$generator);
         }
 
         return self::$generator->$name;
