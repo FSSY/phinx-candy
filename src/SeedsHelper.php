@@ -22,7 +22,7 @@ trait SeedsHelper
     /**
      * @var Generator
      */
-    private static Generator $generator;
+    private static ?Generator $generator = null;
 
     /**
      * Gets property
