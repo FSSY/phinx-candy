@@ -9,7 +9,7 @@ class Column extends \Phinx\Db\Table\Column
     /**
      * @var array
      */
-    protected $defaults = [
+    protected array $defaults = [
         self::BIGINTEGER => 0,
         self::SMALLINTEGER => 0,
         self::INTEGER => 0,
@@ -25,7 +25,7 @@ class Column extends \Phinx\Db\Table\Column
     /**
      * @var array
      */
-    protected $nulls = [
+    protected array $nulls = [
         self::DATE,
         self::DATETIME,
         self::TIME,

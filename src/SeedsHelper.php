@@ -19,7 +19,10 @@ use fssy\migration\faker\Nickname;
  */
 trait SeedsHelper
 {
-    private static $generator;
+    /**
+     * @var Generator
+     */
+    private static Generator $generator;
 
     /**
      * Gets property
