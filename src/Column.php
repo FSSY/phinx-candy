@@ -17,7 +17,6 @@ class Column extends \Phinx\Db\Table\Column
         self::DECIMAL => 0.00,
         self::FLOAT => 0.00,
         self::STRING => "",
-        self::TEXT => "",
         self::TIMESTAMP => 0,
 
     ];
