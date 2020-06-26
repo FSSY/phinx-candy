@@ -18,8 +18,8 @@ class Nickname
      */
     public static function generate(Generator $generator): string
     {
-        $firsts = require_once(__DIR__ . '/config/nickname_first.php');
-        $seconds = require_once(__DIR__ . '/config/nickname_second.php');
+        $firsts = include __DIR__ . '/config/nickname_first.php';
+        $seconds = include __DIR__ . '/config/nickname_second.php';
         return $firsts[$generator->numberBetween(0, count($firsts) - 1)]
             . $seconds[$generator->numberBetween(0, count($seconds) - 1)];
     }
